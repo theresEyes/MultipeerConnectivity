@@ -152,7 +152,7 @@
         <!--Chat-->
         <scene sceneID="aDv-Zq-IYo">
             <objects>
-                <viewController id="hoM-Kw-h3w" sceneMemberID="viewController">
+                <viewController id="hoM-Kw-h3w" customClass="ChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zjs-ta-91l"/>
                         <viewControllerLayoutGuide type="bottom" id="sx0-l2-RFc"/>
@@ -177,6 +177,9 @@
                                     <constraint firstAttribute="width" constant="48" id="dQw-fq-RcX"/>
                                 </constraints>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelMessage:" destination="hoM-Kw-h3w" eventType="touchUpInside" id="x8h-ee-9EJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayX-lW-0oC">
                                 <rect key="frame" x="412" y="73" width="36" height="30"/>
@@ -185,6 +188,9 @@
                                     <constraint firstAttribute="width" constant="36" id="hOo-Ak-0Nz"/>
                                 </constraints>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="hoM-Kw-h3w" eventType="touchUpInside" id="Jhz-8F-X0X"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MCO-79-jku">
                                 <rect key="frame" x="0.0" y="113" width="600" height="438"/>
@@ -208,6 +214,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chat" id="cIc-Ig-2XL"/>
+                    <connections>
+                        <outlet property="tvChat" destination="MCO-79-jku" id="j5K-pk-DgX"/>
+                        <outlet property="txtMessage" destination="aHN-bS-1UX" id="4Iw-pN-NtH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWZ-SH-6ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,6 +17,7 @@
 		6D874F5D1D3CAF9700A6BA22 /* MCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F5C1D3CAF9700A6BA22 /* MCDemoUITests.m */; };
 		6D874F6C1D3CB3DF00A6BA22 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F6B1D3CB3DF00A6BA22 /* ConnectionsViewController.m */; };
 		6D874F6F1D3CC3B500A6BA22 /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F6E1D3CC3B500A6BA22 /* MCManager.m */; };
+		6D874F721D3CD89F00A6BA22 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F711D3CD89F00A6BA22 /* ChatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		6D874F6B1D3CB3DF00A6BA22 /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
 		6D874F6D1D3CC3B500A6BA22 /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
 		6D874F6E1D3CC3B500A6BA22 /* MCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCManager.m; sourceTree = "<group>"; };
+		6D874F701D3CD89F00A6BA22 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		6D874F711D3CD89F00A6BA22 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				6D874F3E1D3CAF9700A6BA22 /* ViewController.m */,
 				6D874F6A1D3CB3DF00A6BA22 /* ConnectionsViewController.h */,
 				6D874F6B1D3CB3DF00A6BA22 /* ConnectionsViewController.m */,
+				6D874F701D3CD89F00A6BA22 /* ChatViewController.h */,
+				6D874F711D3CD89F00A6BA22 /* ChatViewController.m */,
 				6D874F371D3CAF9700A6BA22 /* Supporting Files */,
 			);
 			path = MCDemo;
@@ -282,6 +287,7 @@
 			files = (
 				6D874F6F1D3CC3B500A6BA22 /* MCManager.m in Sources */,
 				6D874F6C1D3CB3DF00A6BA22 /* ConnectionsViewController.m in Sources */,
+				6D874F721D3CD89F00A6BA22 /* ChatViewController.m in Sources */,
 				6D874F3F1D3CAF9700A6BA22 /* ViewController.m in Sources */,
 				6D874F3C1D3CAF9700A6BA22 /* AppDelegate.m in Sources */,
 				6D874F391D3CAF9700A6BA22 /* main.m in Sources */,
