@@ -7,10 +7,8 @@
 //
 
 #import "ChatViewController.h"
-#import "AppDelegate.h"
-
+#import "MCManager.h"
 @interface ChatViewController()<UITextFieldDelegate>
-@property (nonatomic, strong) AppDelegate *appDelegate;
 @end
 
 @implementation ChatViewController
@@ -18,8 +16,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
     _txtMessage.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -48,10 +44,10 @@
 
 -(void)sendMyMessage{
     NSData *dataToSend = [_txtMessage.text dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *allPeers = _appDelegate.mcManager.session.connectedPeers;
+    NSArray *allPeers = [MCManager getInstance].session.connectedPeers;
     NSError *error;
     
-    [_appDelegate.mcManager.session sendData:dataToSend
+    [[MCManager getInstance].session sendData:dataToSend
                                      toPeers:allPeers
                                     withMode:MCSessionSendDataReliable
                                        error:&error];

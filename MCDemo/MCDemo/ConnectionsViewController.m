@@ -7,9 +7,8 @@
 //
 
 #import "ConnectionsViewController.h"
-#import "AppDelegate.h"
+#import "MCManager.h"
 @interface ConnectionsViewController()<MCBrowserViewControllerDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
-@property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSMutableArray *arrConnectedDevices;
 @property (weak, nonatomic) IBOutlet UITableView *tblConnectedDevices;
 
@@ -20,9 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [[_appDelegate mcManager] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
-    [[_appDelegate mcManager] advertiseSelf:_swVisible.isOn];
+    [[MCManager getInstance] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
+    [[MCManager getInstance] advertiseSelf:_swVisible.isOn];
     
     [_txtName setDelegate:self];
     
@@ -43,35 +41,35 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [_txtName resignFirstResponder];
     
-    _appDelegate.mcManager.peerID = nil;
-    _appDelegate.mcManager.session = nil;
-    _appDelegate.mcManager.browser = nil;
+    [MCManager getInstance] .peerID = nil;
+    [MCManager getInstance] .session = nil;
+    [MCManager getInstance] .browser = nil;
     
     if ([_swVisible isOn]) {
-        [_appDelegate.mcManager.advertiser stop];
+        [[MCManager getInstance].advertiser stop];
     }
-    _appDelegate.mcManager.advertiser = nil;
+    [MCManager getInstance] .advertiser = nil;
     
-    [_appDelegate.mcManager setupPeerAndSessionWithDisplayName:_txtName.text];
-    [_appDelegate.mcManager setupMCBrowser];
-    [_appDelegate.mcManager advertiseSelf:_swVisible.isOn];
+    [[MCManager getInstance]  setupPeerAndSessionWithDisplayName:_txtName.text];
+    [[MCManager getInstance] setupMCBrowser];
+    [[MCManager getInstance]  advertiseSelf:_swVisible.isOn];
     
     return YES;
 }
 
 
 - (IBAction)browseForDevices:(id)sender {
-    [[_appDelegate mcManager] setupMCBrowser];
-    [[[_appDelegate mcManager] browser] setDelegate:self];
-    [self presentViewController:[[_appDelegate mcManager] browser] animated:YES completion:nil];
+    [[MCManager getInstance]  setupMCBrowser];
+    [[[MCManager getInstance]  browser] setDelegate:self];
+    [self presentViewController:[[MCManager getInstance]  browser] animated:YES completion:nil];
 }
 
 - (IBAction)toggleVisibility:(id)sender {
-    [_appDelegate.mcManager advertiseSelf:_swVisible.isOn];
+    [[MCManager getInstance]  advertiseSelf:_swVisible.isOn];
 }
 
 - (IBAction)disconnect:(id)sender {
-    [_appDelegate.mcManager.session disconnect];
+    [[MCManager getInstance] .session disconnect];
     
     _txtName.enabled = YES;
     
@@ -83,11 +81,11 @@
 #pragma mark - MCBrowserViewControllerDelegate method implementation
 
 -(void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController{
-    [_appDelegate.mcManager.browser dismissViewControllerAnimated:YES completion:nil];
+    [[MCManager getInstance] .browser dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController{
-    [_appDelegate.mcManager.browser dismissViewControllerAnimated:YES completion:nil];
+    [[MCManager getInstance] .browser dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Private method implementation
@@ -109,7 +107,7 @@
         }
         [_tblConnectedDevices reloadData];
         
-        BOOL peersExist = ([[_appDelegate.mcManager.session connectedPeers] count] == 0);
+        BOOL peersExist = ([[[MCManager getInstance] .session connectedPeers] count] == 0);
         [_btnDisconnect setEnabled:!peersExist];
         [_txtName setEnabled:peersExist];
     }

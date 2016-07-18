@@ -7,9 +7,8 @@
 //
 
 #import "FileTransportViewController.h"
-#import "AppDelegate.h"
+#import "MCManager.h"
 @interface FileTransportViewController ()
-@property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSString *documentsDirectory;
 @property (nonatomic, strong) NSMutableArray *arrFiles;
 @property (nonatomic, strong) NSString *selectedFile;
@@ -20,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     [self copySampleFilesToDocDirIfNeeded];
     _arrFiles = [[NSMutableArray alloc] initWithArray:[self getAllDocDirFiles]];
@@ -202,8 +200,8 @@
                                                   destructiveButtonTitle:nil
                                                        otherButtonTitles:nil];
     
-    for (int i=0; i<[[_appDelegate.mcManager.session connectedPeers] count]; i++) {
-        [confirmSending addButtonWithTitle:[[[_appDelegate.mcManager.session connectedPeers] objectAtIndex:i] displayName]];
+    for (int i=0; i<[[[MCManager getInstance].session connectedPeers] count]; i++) {
+        [confirmSending addButtonWithTitle:[[[[MCManager getInstance].session connectedPeers] objectAtIndex:i] displayName]];
     }
     
     [confirmSending setCancelButtonIndex:[confirmSending addButtonWithTitle:@"Cancel"]];
@@ -218,15 +216,15 @@
 #pragma mark - UIActionSheet Delegate method implementation
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex != [[_appDelegate.mcManager.session connectedPeers] count]) {
+    if (buttonIndex != [[[MCManager getInstance].session connectedPeers] count]) {
         NSString *filePath = [_documentsDirectory stringByAppendingPathComponent:_selectedFile];
-        NSString *modifiedName = [NSString stringWithFormat:@"%@_%@", _appDelegate.mcManager.peerID.displayName, _selectedFile];
+        NSString *modifiedName = [NSString stringWithFormat:@"%@_%@", [MCManager getInstance].peerID.displayName, _selectedFile];
         NSURL *resourceURL = [NSURL fileURLWithPath:filePath];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSProgress *progress = [_appDelegate.mcManager.session sendResourceAtURL:resourceURL
+            NSProgress *progress = [[MCManager getInstance].session sendResourceAtURL:resourceURL
                                                                             withName:modifiedName
-                                                                              toPeer:[[_appDelegate.mcManager.session connectedPeers] objectAtIndex:buttonIndex]
+                                                                              toPeer:[[[MCManager getInstance].session connectedPeers] objectAtIndex:buttonIndex]
                                                                withCompletionHandler:^(NSError *error) {
                                                                    if (error) {
                                                                        NSLog(@"Error: %@", [error localizedDescription]);

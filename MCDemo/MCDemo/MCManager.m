@@ -10,6 +10,8 @@
 
 @implementation MCManager
 
+static MCManager *mcmanager_instance = NULL;
+
 - (id)init
 {
     self = [super init];
@@ -20,6 +22,14 @@
         _advertiser = nil;
     }
     return self;
+}
+
++ (instancetype)getInstance
+{
+    if (mcmanager_instance == NULL) {
+        mcmanager_instance = [[MCManager alloc] init];
+    }
+    return mcmanager_instance;
 }
 
 #pragma mark - Public method implementation
