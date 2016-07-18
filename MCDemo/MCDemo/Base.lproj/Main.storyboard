@@ -86,6 +86,9 @@
                                     <constraint firstAttribute="height" constant="31" id="5yR-vZ-Exv"/>
                                     <constraint firstAttribute="width" constant="49" id="m9q-oU-WYm"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="toggleVisibility:" destination="bNM-X6-3M2" eventType="touchUpInside" id="Gt1-Ld-LH0"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzQ-ez-qBG">
                                 <rect key="frame" x="235" y="110" width="130" height="30"/>
@@ -94,6 +97,9 @@
                                     <constraint firstAttribute="height" constant="30" id="J3U-oN-cpA"/>
                                 </constraints>
                                 <state key="normal" title="Browse for devices"/>
+                                <connections>
+                                    <action selector="browseForDevices:" destination="bNM-X6-3M2" eventType="touchUpInside" id="Rq9-vN-CtI"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JuE-1o-fph">
                                 <rect key="frame" x="0.0" y="148" width="600" height="357"/>
@@ -108,6 +114,9 @@
                                 <state key="normal" title="Disconnect">
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="disconnect:" destination="bNM-X6-3M2" eventType="touchUpInside" id="NdO-UO-I1L"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,6 +138,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Connections" id="tWx-uT-FgV"/>
+                    <connections>
+                        <outlet property="btnDisconnect" destination="kB4-NV-CFa" id="VZj-xZ-svT"/>
+                        <outlet property="swVisible" destination="J1e-ti-B3r" id="Psb-Km-qSB"/>
+                        <outlet property="tblConnectedDevices" destination="JuE-1o-fph" id="Gnz-zV-4g3"/>
+                        <outlet property="txtName" destination="IeY-XQ-z0T" id="txT-oO-dWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WiL-al-xKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ConnectionsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISwitch *swVisible;
+@property (weak, nonatomic) IBOutlet UITextField *txtName;
+@property (weak, nonatomic) IBOutlet UIButton *btnDisconnect;
 
 @end
