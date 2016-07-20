@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D3FA1F81D3F523C00257DA9 /* IPAddress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D3FA1F61D3F523C00257DA9 /* IPAddress.cpp */; };
+		6D3FA1FB1D3F52DC00257DA9 /* PIDGenerater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D3FA1FA1D3F52DC00257DA9 /* PIDGenerater.cpp */; };
 		6D874F391D3CAF9700A6BA22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F381D3CAF9700A6BA22 /* main.m */; };
 		6D874F3C1D3CAF9700A6BA22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F3B1D3CAF9700A6BA22 /* AppDelegate.m */; };
 		6D874F3F1D3CAF9700A6BA22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F3E1D3CAF9700A6BA22 /* ViewController.m */; };
@@ -17,7 +19,7 @@
 		6D874F5D1D3CAF9700A6BA22 /* MCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F5C1D3CAF9700A6BA22 /* MCDemoUITests.m */; };
 		6D874F6C1D3CB3DF00A6BA22 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F6B1D3CB3DF00A6BA22 /* ConnectionsViewController.m */; };
 		6D874F6F1D3CC3B500A6BA22 /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F6E1D3CC3B500A6BA22 /* MCManager.m */; };
-		6D874F721D3CD89F00A6BA22 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F711D3CD89F00A6BA22 /* ChatViewController.m */; };
+		6D874F721D3CD89F00A6BA22 /* ChatViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F711D3CD89F00A6BA22 /* ChatViewController.mm */; };
 		6D874F751D3CDC0900A6BA22 /* FileTransportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F741D3CDC0900A6BA22 /* FileTransportViewController.m */; };
 		6D874F781D3CDF5A00A6BA22 /* sample_file1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D874F761D3CDF5A00A6BA22 /* sample_file1.txt */; };
 		6D874F791D3CDF5A00A6BA22 /* sample_file2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D874F771D3CDF5A00A6BA22 /* sample_file2.txt */; };
@@ -41,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D3FA1F61D3F523C00257DA9 /* IPAddress.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPAddress.cpp; sourceTree = "<group>"; };
+		6D3FA1F71D3F523C00257DA9 /* IPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddress.h; sourceTree = "<group>"; };
+		6D3FA1F91D3F52DC00257DA9 /* PIDGenerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIDGenerater.h; sourceTree = "<group>"; };
+		6D3FA1FA1D3F52DC00257DA9 /* PIDGenerater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PIDGenerater.cpp; sourceTree = "<group>"; };
+		6D3FA1FC1D3F535900257DA9 /* datatype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datatype.h; sourceTree = "<group>"; };
 		6D874F341D3CAF9700A6BA22 /* MCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D874F381D3CAF9700A6BA22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D874F3A1D3CAF9700A6BA22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,7 +69,7 @@
 		6D874F6D1D3CC3B500A6BA22 /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
 		6D874F6E1D3CC3B500A6BA22 /* MCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCManager.m; sourceTree = "<group>"; };
 		6D874F701D3CD89F00A6BA22 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		6D874F711D3CD89F00A6BA22 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		6D874F711D3CD89F00A6BA22 /* ChatViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChatViewController.mm; sourceTree = "<group>"; };
 		6D874F731D3CDC0900A6BA22 /* FileTransportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTransportViewController.h; sourceTree = "<group>"; };
 		6D874F741D3CDC0900A6BA22 /* FileTransportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTransportViewController.m; sourceTree = "<group>"; };
 		6D874F761D3CDF5A00A6BA22 /* sample_file1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_file1.txt; sourceTree = "<group>"; };
@@ -94,6 +101,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D3FA1F51D3F523500257DA9 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6D3FA1FC1D3F535900257DA9 /* datatype.h */,
+				6D3FA1F91D3F52DC00257DA9 /* PIDGenerater.h */,
+				6D3FA1FA1D3F52DC00257DA9 /* PIDGenerater.cpp */,
+				6D3FA1F61D3F523C00257DA9 /* IPAddress.cpp */,
+				6D3FA1F71D3F523C00257DA9 /* IPAddress.h */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		6D874F2B1D3CAF9700A6BA22 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +136,7 @@
 		6D874F361D3CAF9700A6BA22 /* MCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6D3FA1F51D3F523500257DA9 /* utils */,
 				6D874F6D1D3CC3B500A6BA22 /* MCManager.h */,
 				6D874F6E1D3CC3B500A6BA22 /* MCManager.m */,
 				6D874F3A1D3CAF9700A6BA22 /* AppDelegate.h */,
@@ -126,7 +146,7 @@
 				6D874F6A1D3CB3DF00A6BA22 /* ConnectionsViewController.h */,
 				6D874F6B1D3CB3DF00A6BA22 /* ConnectionsViewController.m */,
 				6D874F701D3CD89F00A6BA22 /* ChatViewController.h */,
-				6D874F711D3CD89F00A6BA22 /* ChatViewController.m */,
+				6D874F711D3CD89F00A6BA22 /* ChatViewController.mm */,
 				6D874F731D3CDC0900A6BA22 /* FileTransportViewController.h */,
 				6D874F741D3CDC0900A6BA22 /* FileTransportViewController.m */,
 				6D874F371D3CAF9700A6BA22 /* Supporting Files */,
@@ -300,11 +320,13 @@
 			files = (
 				6D874F6F1D3CC3B500A6BA22 /* MCManager.m in Sources */,
 				6D874F6C1D3CB3DF00A6BA22 /* ConnectionsViewController.m in Sources */,
-				6D874F721D3CD89F00A6BA22 /* ChatViewController.m in Sources */,
+				6D874F721D3CD89F00A6BA22 /* ChatViewController.mm in Sources */,
 				6D874F3F1D3CAF9700A6BA22 /* ViewController.m in Sources */,
 				6D874F751D3CDC0900A6BA22 /* FileTransportViewController.m in Sources */,
+				6D3FA1F81D3F523C00257DA9 /* IPAddress.cpp in Sources */,
 				6D874F3C1D3CAF9700A6BA22 /* AppDelegate.m in Sources */,
 				6D874F391D3CAF9700A6BA22 /* main.m in Sources */,
+				6D3FA1FB1D3F52DC00257DA9 /* PIDGenerater.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +550,7 @@
 				6D874F631D3CAF9700A6BA22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D874F641D3CAF9700A6BA22 /* Build configuration list for PBXNativeTarget "MCDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +559,7 @@
 				6D874F661D3CAF9700A6BA22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D874F671D3CAF9700A6BA22 /* Build configuration list for PBXNativeTarget "MCDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +568,7 @@
 				6D874F691D3CAF9700A6BA22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

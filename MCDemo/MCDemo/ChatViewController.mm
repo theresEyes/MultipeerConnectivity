@@ -8,6 +8,7 @@
 
 #import "ChatViewController.h"
 #import "MCManager.h"
+#import "PIDGenerater.h"
 @interface ChatViewController()<UITextFieldDelegate>
 @end
 
@@ -59,6 +60,11 @@
     [_tvChat setText:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"I wrote:\n%@\n\n", _txtMessage.text]]];
     [_txtMessage setText:@""];
     [_txtMessage resignFirstResponder];
+    
+    
+    CPIDGenerater::GetInstance()->refreshAddresses();
+    NSLog(@"qizhang-------%s",CPIDGenerater::GetInstance()->Get_cm_ipaddress());
+    
 }
 
 
