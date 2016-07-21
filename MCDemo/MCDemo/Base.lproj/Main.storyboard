@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="width" constant="362" id="ra7-35-vCU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ppb-h7-3lC">
@@ -42,7 +42,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqP-bV-u1G">
                                                     <rect key="frame" x="17" y="0.0" width="567" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaB-eS-iPK">
@@ -107,7 +107,7 @@
                                     <constraint firstAttribute="height" constant="31" id="mVx-IQ-e3y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-ti-B3r">
@@ -228,13 +228,39 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJz-37-cJu">
+                                <rect key="frame" x="278" y="73" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KLa-QL-rNp"/>
+                                    <constraint firstAttribute="width" constant="45" id="y60-To-Lax"/>
+                                </constraints>
+                                <state key="normal" title="server"/>
+                                <connections>
+                                    <action selector="onpressedButtonSocketSendMessage:" destination="hoM-Kw-h3w" eventType="touchUpInside" id="s0T-A3-OD1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLv-6N-P2Z">
+                                <rect key="frame" x="348" y="73" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I0g-mN-sOQ"/>
+                                    <constraint firstAttribute="width" constant="46" id="g4D-ei-DzT"/>
+                                </constraints>
+                                <state key="normal" title="client"/>
+                                <connections>
+                                    <action selector="onpressedButtonStartClient:" destination="hoM-Kw-h3w" eventType="touchUpInside" id="OTR-0d-Vam"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ayX-lW-0oC" firstAttribute="top" secondItem="aHN-bS-1UX" secondAttribute="bottom" constant="15" id="1Ke-ew-jSg"/>
+                            <constraint firstItem="GJz-37-cJu" firstAttribute="top" secondItem="aHN-bS-1UX" secondAttribute="bottom" constant="15" id="5cb-72-KqG"/>
+                            <constraint firstItem="bLv-6N-P2Z" firstAttribute="top" secondItem="aHN-bS-1UX" secondAttribute="bottom" constant="15" id="BlE-oy-6qV"/>
                             <constraint firstItem="MCO-79-jku" firstAttribute="leading" secondItem="XnC-nM-OT5" secondAttribute="leading" id="BwX-EU-cro"/>
+                            <constraint firstItem="GJz-37-cJu" firstAttribute="centerX" secondItem="XnC-nM-OT5" secondAttribute="centerX" id="C8j-8W-S9v"/>
                             <constraint firstItem="ayX-lW-0oC" firstAttribute="trailing" secondItem="aHN-bS-1UX" secondAttribute="trailing" id="Fwe-FE-FyO"/>
                             <constraint firstItem="aHN-bS-1UX" firstAttribute="top" secondItem="Zjs-ta-91l" secondAttribute="bottom" constant="8" id="J73-2m-AqU"/>
+                            <constraint firstItem="bLv-6N-P2Z" firstAttribute="leading" secondItem="GJz-37-cJu" secondAttribute="trailing" constant="25" id="UlF-iR-Jdv"/>
                             <constraint firstItem="k28-Zy-hnu" firstAttribute="leading" secondItem="aHN-bS-1UX" secondAttribute="leading" id="VE0-WC-kqV"/>
                             <constraint firstItem="k28-Zy-hnu" firstAttribute="top" secondItem="aHN-bS-1UX" secondAttribute="bottom" constant="15" id="Zo5-F6-7lh"/>
                             <constraint firstAttribute="trailing" secondItem="MCO-79-jku" secondAttribute="trailing" id="afT-Im-nJp"/>

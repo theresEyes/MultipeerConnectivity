@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6D3FA1F81D3F523C00257DA9 /* IPAddress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D3FA1F61D3F523C00257DA9 /* IPAddress.cpp */; };
 		6D3FA1FB1D3F52DC00257DA9 /* PIDGenerater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D3FA1FA1D3F52DC00257DA9 /* PIDGenerater.cpp */; };
+		6D3FA2041D4066BA00257DA9 /* FastServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3FA2011D4066BA00257DA9 /* FastServerSocket.m */; };
+		6D3FA2051D4066BA00257DA9 /* FastSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3FA2031D4066BA00257DA9 /* FastSocket.m */; };
 		6D874F391D3CAF9700A6BA22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F381D3CAF9700A6BA22 /* main.m */; };
 		6D874F3C1D3CAF9700A6BA22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F3B1D3CAF9700A6BA22 /* AppDelegate.m */; };
 		6D874F3F1D3CAF9700A6BA22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D874F3E1D3CAF9700A6BA22 /* ViewController.m */; };
@@ -48,6 +50,10 @@
 		6D3FA1F91D3F52DC00257DA9 /* PIDGenerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIDGenerater.h; sourceTree = "<group>"; };
 		6D3FA1FA1D3F52DC00257DA9 /* PIDGenerater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PIDGenerater.cpp; sourceTree = "<group>"; };
 		6D3FA1FC1D3F535900257DA9 /* datatype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datatype.h; sourceTree = "<group>"; };
+		6D3FA2001D4066BA00257DA9 /* FastServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastServerSocket.h; sourceTree = "<group>"; };
+		6D3FA2011D4066BA00257DA9 /* FastServerSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastServerSocket.m; sourceTree = "<group>"; };
+		6D3FA2021D4066BA00257DA9 /* FastSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastSocket.h; sourceTree = "<group>"; };
+		6D3FA2031D4066BA00257DA9 /* FastSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastSocket.m; sourceTree = "<group>"; };
 		6D874F341D3CAF9700A6BA22 /* MCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D874F381D3CAF9700A6BA22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D874F3A1D3CAF9700A6BA22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		6D3FA1F51D3F523500257DA9 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				6D3FA1FF1D4066BA00257DA9 /* fastSocket */,
 				6D3FA1FC1D3F535900257DA9 /* datatype.h */,
 				6D3FA1F91D3F52DC00257DA9 /* PIDGenerater.h */,
 				6D3FA1FA1D3F52DC00257DA9 /* PIDGenerater.cpp */,
@@ -111,6 +118,17 @@
 				6D3FA1F71D3F523C00257DA9 /* IPAddress.h */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		6D3FA1FF1D4066BA00257DA9 /* fastSocket */ = {
+			isa = PBXGroup;
+			children = (
+				6D3FA2001D4066BA00257DA9 /* FastServerSocket.h */,
+				6D3FA2011D4066BA00257DA9 /* FastServerSocket.m */,
+				6D3FA2021D4066BA00257DA9 /* FastSocket.h */,
+				6D3FA2031D4066BA00257DA9 /* FastSocket.m */,
+			);
+			path = fastSocket;
 			sourceTree = "<group>";
 		};
 		6D874F2B1D3CAF9700A6BA22 = {
@@ -319,8 +337,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D874F6F1D3CC3B500A6BA22 /* MCManager.m in Sources */,
+				6D3FA2051D4066BA00257DA9 /* FastSocket.m in Sources */,
 				6D874F6C1D3CB3DF00A6BA22 /* ConnectionsViewController.m in Sources */,
 				6D874F721D3CD89F00A6BA22 /* ChatViewController.mm in Sources */,
+				6D3FA2041D4066BA00257DA9 /* FastServerSocket.m in Sources */,
 				6D874F3F1D3CAF9700A6BA22 /* ViewController.m in Sources */,
 				6D874F751D3CDC0900A6BA22 /* FileTransportViewController.m in Sources */,
 				6D3FA1F81D3F523C00257DA9 /* IPAddress.cpp in Sources */,
@@ -469,6 +489,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MCDemo/utils",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shine.MCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -480,6 +504,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MCDemo/utils",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shine.MCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
