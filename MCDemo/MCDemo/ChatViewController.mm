@@ -10,9 +10,19 @@
 #import "MCManager.h"
 #import "PIDGenerater.h"
 @interface ChatViewController()<UITextFieldDelegate>
+@property (nonatomic,strong) NSString *mc_ipaddress;
 @end
 
 @implementation ChatViewController
+
+- (NSString *)mc_ipaddress
+{
+    if (!_mc_ipaddress) {
+        CPIDGenerater::GetInstance()->refreshAddresses();
+        _mc_ipaddress = [NSString stringWithUTF8String:CPIDGenerater::GetInstance()->Get_cm_ipaddress()];
+    }
+    return _mc_ipaddress;
+}
 
 - (void)viewDidLoad
 {
@@ -24,7 +34,6 @@
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
 }
-
 
 
 - (IBAction)sendMessage:(id)sender {
@@ -44,7 +53,10 @@
 #pragma mark - Private method implementation
 
 -(void)sendMyMessage{
-    NSData *dataToSend = [_txtMessage.text dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *messageContent = [NSString stringWithFormat:@"%@-%@",self.mc_ipaddress,_txtMessage.text];
+    
+    NSData *dataToSend = [messageContent dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *allPeers = [MCManager getInstance].session.connectedPeers;
     NSError *error;
     
@@ -62,8 +74,8 @@
     [_txtMessage resignFirstResponder];
     
     
-    CPIDGenerater::GetInstance()->refreshAddresses();
-    NSLog(@"qizhang-------%s",CPIDGenerater::GetInstance()->Get_cm_ipaddress());
+    
+    
     
 }
 
@@ -74,7 +86,11 @@
     
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    NSArray *array = [receivedText componentsSeparatedByString:@"-"];
+    NSString *message = array[1];
+    NSString *ipaddress = array[0];
+    NSLog(@"qizhang----ip--->%@",ipaddress);
     
-    [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ wrote:\n%@\n\n", peerDisplayName, receivedText]] waitUntilDone:NO];
+    [_tvChat performSelectorOnMainThread:@selector(setText:) withObject:[_tvChat.text stringByAppendingString:[NSString stringWithFormat:@"%@ wrote:\n%@\n\n", peerDisplayName, message]] waitUntilDone:NO];
 }
 @end

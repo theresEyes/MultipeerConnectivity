@@ -59,7 +59,7 @@ CPIDGenerater::CPIDGenerater()
     m_defaultPeerid = 0;
     InitAddresses();
     GetIPAddresses();
-    GetHWAddresses();
+//    GetHWAddresses();
 }
 CPIDGenerater::~CPIDGenerater()
 {
@@ -280,5 +280,5 @@ void CPIDGenerater::refreshAddresses()
 {
     FreeAddresses();
     GetIPAddresses();
-    GetHWAddresses();
+//    GetHWAddresses();
 }
