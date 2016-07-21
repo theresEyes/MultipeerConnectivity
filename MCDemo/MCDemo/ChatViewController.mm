@@ -59,13 +59,20 @@
     // open a connection
 //    SKTCPSocket *socket = []
     
-    startServer();
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+     dispatch_async(globalQueue, ^{
+         startServer();
+     });
+    
     
     
 }
 
 - (IBAction)onpressedButtonStartClient:(id)sender {
-    startClient();
+     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(globalQueue, ^{
+        startClient();
+    });
 }
 
 
@@ -142,7 +149,7 @@ int startClient()
     server_addr.sin_len = sizeof(struct sockaddr_in);
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(12345);
-    server_addr.sin_addr.s_addr = inet_addr("10.0.221.23");
+    server_addr.sin_addr.s_addr = inet_addr("10.21.19.32");
     bzero(&(server_addr.sin_zero),8);
     
     int server_socket = socket(AF_INET, SOCK_STREAM, 0);
@@ -172,6 +179,7 @@ int startClient()
         }
         
     }else{
+        printf("accept error, %s\n", strerror(errno));
         printf("connect to server failed\n");
     }
     
